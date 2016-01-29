@@ -13,8 +13,8 @@ import server.player.entity.PlayerOb;
 import server.player.entity.PlayerPo;
 import server.util.DataKey;
 import server.util.DataUtil;
-import server.util.ObsvarKey;
-import server.util.ObsvarUtil;
+import server.util.OvarKey;
+import server.util.OvarUtil;
 
 /**
  * @author Xiong
@@ -94,7 +94,7 @@ public class PlayerService {
 	 * @return
 	 */
 	private static PlayerOb getPlayerOb(PlayerPo po){
-		String key = ObsvarUtil.getKey(ObsvarKey.PLAYER, po.uid);
+		String key = OvarUtil.getKey(OvarKey.PLAYER, po.uid);
 		PlayerOb ob = RequestContext.get(key);
 		if (ob == null){
 			ob = new PlayerOb(po.uid);

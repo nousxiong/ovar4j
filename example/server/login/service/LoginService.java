@@ -14,8 +14,8 @@ import server.login.entity.UserOb;
 import server.login.entity.UserPo;
 import server.util.DataKey;
 import server.util.DataUtil;
-import server.util.ObsvarKey;
-import server.util.ObsvarUtil;
+import server.util.OvarKey;
+import server.util.OvarUtil;
 
 /**
  * @author Xiong
@@ -99,7 +99,7 @@ public class LoginService {
 	 * @return
 	 */
 	private static UserOb getUserOb(UserPo po){
-		String key = ObsvarUtil.getKey(ObsvarKey.USER, po.uid);
+		String key = OvarUtil.getKey(OvarKey.USER, po.uid);
 		UserOb ob = RequestContext.get(key);
 		if (ob == null){
 			ob = new UserOb(po.username);

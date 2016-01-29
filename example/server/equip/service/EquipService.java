@@ -15,8 +15,8 @@ import server.equip.entity.EquipPo;
 import server.equip.entity.EquipOb;
 import server.util.DataKey;
 import server.util.DataUtil;
-import server.util.ObsvarKey;
-import server.util.ObsvarUtil;
+import server.util.OvarKey;
+import server.util.OvarUtil;
 
 /**
  * @author Xiong
@@ -126,7 +126,7 @@ public class EquipService {
 	 * @return
 	 */
 	private static EquipOb getEquipOb(EquipPo po){
-		String key = ObsvarUtil.getKey(ObsvarKey.EQUIP, po.uid, po.id);
+		String key = OvarUtil.getKey(OvarKey.EQUIP, po.uid, po.id);
 		EquipOb ob = RequestContext.get(key);
 		if (ob == null){
 			ob = new EquipOb(po.uid, po.id);
